@@ -209,6 +209,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+/* Desktop: net-label ko right top me bhejna */
+@media (min-width: 981px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .net-label {
+    margin-left: auto;   /* right push */
+    font-size: 15px;
+    color: #fff;
+  }
+}
+
+
+
+
+    
 /* ===============================
    Mobile View Fix (max-width: 768px)
    =============================== */
