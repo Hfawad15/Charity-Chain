@@ -225,9 +225,22 @@
   }
 }
 
+/* Desktop: contact-panel ko wallet ke neeche fix karo */
 @media (min-width: 981px) {
   .contact-panel {
-    grid-column: 2;   /* right column me bhejna */
+    grid-column: 2;  /* right column */
+    grid-row: 2;     /* wallet ke neeche */
+    width: auto;
+    order: unset;
+  }
+}
+
+/* Mobile: neeche full width */
+@media (max-width: 980px) {
+  .contact-panel {
+    order: 3 !important;
+    width: 100%;
+    grid-column: 1 / -1;
   }
 }
 
@@ -453,80 +466,79 @@
 
       
       <!-- RIGHT: presale panel -->
-      <aside>
-        <div class="panel">
-          <div class="label">Connect Wallet</div>
-          <button class="connect-btn" id="connectBtn">Connect Wallet</button>
-          <div class="tiny" id="statusText" style="margin-top:8px">Not connected</div>
+  <aside>
+    <div class="panel">
+      <div class="label">Connect Wallet</div>
+      <button class="connect-btn" id="connectBtn">Connect Wallet</button>
+      <div class="tiny" id="statusText" style="margin-top:8px">Not connected</div>
 
-          <div style="margin-top:14px;">
-            <div class="label">USDT Amount (Polygon)</div>
-            <div class="input-row">
-              <input id="usdtAmount" type="number" step="0.000001" placeholder="e.g. 0.5">
-            </div>
-
-            <div class="label" style="margin-top:10px">You will receive (CHC)</div>
-            <div class="input-row">
-              <input id="chcAmount" type="text" readonly placeholder="CHC amount will appear here">
-            </div>
-
-            <div class="tiny" style="margin-top:8px">
-              <strong>Rate:</strong> <span id="rateInfo">1 CHC = $0.001 (1 USDT = 1,000 CHC)</span><br>
-              <small style="color:var(--muted)">Next stage: 1 CHC = $0.0025</small>
-            </div>
-
-            <div class="controls">
-              <button class="btn" id="approveBtn">Approve USDT</button>
-              <button class="btn secondary" id="buyBtn">Buy CHC</button>
-            </div>
-
-            <!-- Addresses below buttons -->
-            <div style="margin-top:14px;">
-              <div class="label">Presale Contract</div>
-              <div class="addr" id="presaleAddr">0xd4434bab66b9687AbAb29128467703DB9d627244</div>
-
-              <div class="label" style="margin-top:10px">CHC Token Contract</div>
-              <div class="addr" id="chcAddr">0x42804f300e3B6E7ea23c1B6585F5fc6EB0cf5Ba9</div>
-
-              <div class="label" style="margin-top:10px">Charity Wallet</div>
-              <div class="addr" id="charityAddr">0x5D87C4F37465DBdB79827d2ff59a83B2C8e8cF3e</div>
-
-              <div class="label" style="margin-top:10px">Admin / Dev Wallet</div>
-              <div class="addr" id="adminAddr">0x32dcEa364611ad237AFA5c5169635029cd57Cb2D</div>
-            </div>
-
-          <div class="socials">
-            <a href="https://facebook.com/charitychain.chc" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="40"/></a>
-            <a href="https://instagram.com/charitychain.chc" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="40"/></a>
-            <a href="https://t.me/CharityChainCHC" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="40"/></a>
-            <a href="https://x.com/CharityChainCHC" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" width="40"/></a>
-            <a href="https://discord.gg/YourInviteCodeHere" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" width="40"/></a>
-          </div>
-
-
-          </aside>
-            
-        <!-- CONTACT quick -->
-      <div class="contact-panel" style="margin-top:14px">
-        <div class="label">Contact Us</div>
-        <div class="muted" style="margin-top:8px">
-          Email: <span class="highlight">charitychain.chc@gmail.com</span>
+      <div style="margin-top:14px;">
+        <div class="label">USDT Amount (Polygon)</div>
+        <div class="input-row">
+          <input id="usdtAmount" type="number" step="0.000001" placeholder="e.g. 0.5">
         </div>
-        <div style="margin-top:8px">
-          <form action="mailto:charitychain.chc@gmail.com" method="post" enctype="text/plain" onsubmit="return contactNote()">
-            <input type="text" name="name" placeholder="Your Name" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff">
-            <input type="email" name="email" placeholder="Your Email Address" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff">
-            <input type="text" name="title" placeholder="Title" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff">
-            <textarea name="message" placeholder="Message" rows="4" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff"></textarea>
-            <button type="submit" class="btn" style="width:100%; margin-top:10px">Send</button>
-          </form>
+
+        <div class="label" style="margin-top:10px">You will receive (CHC)</div>
+        <div class="input-row">
+          <input id="chcAmount" type="text" readonly placeholder="CHC amount will appear here">
+        </div>
+
+        <div class="tiny" style="margin-top:8px">
+          <strong>Rate:</strong> <span id="rateInfo">1 CHC = $0.001 (1 USDT = 1,000 CHC)</span><br>
+          <small style="color:var(--muted)">Next stage: 1 CHC = $0.0025</small>
+        </div>
+
+        <div class="controls">
+          <button class="btn" id="approveBtn">Approve USDT</button>
+          <button class="btn secondary" id="buyBtn">Buy CHC</button>
+        </div>
+
+        <!-- Addresses -->
+        <div style="margin-top:14px;">
+          <div class="label">Presale Contract</div>
+          <div class="addr" id="presaleAddr">0xd4434bab66b9687AbAb29128467703DB9d627244</div>
+
+          <div class="label" style="margin-top:10px">CHC Token Contract</div>
+          <div class="addr" id="chcAddr">0x42804f300e3B6E7ea23c1B6585F5fc6EB0cf5Ba9</div>
+
+          <div class="label" style="margin-top:10px">Charity Wallet</div>
+          <div class="addr" id="charityAddr">0x5D87C4F37465DBdB79827d2ff59a83B2C8e8cF3e</div>
+
+          <div class="label" style="margin-top:10px">Admin / Dev Wallet</div>
+          <div class="addr" id="adminAddr">0x32dcEa364611ad237AFA5c5169635029cd57Cb2D</div>
         </div>
       </div>
 
-    </div> <!-- end .grid -->
+      <div class="socials">
+        <a href="https://facebook.com/charitychain.chc" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="40"/></a>
+        <a href="https://instagram.com/charitychain.chc" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="40"/></a>
+        <a href="https://t.me/CharityChainCHC" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="40"/></a>
+        <a href="https://x.com/CharityChainCHC" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png" width="40"/></a>
+        <a href="https://discord.gg/YourInviteCodeHere" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" width="40"/></a>
+      </div>
+    </div>
+  </aside>
 
-    <footer>© Charity Chain — Transparency first. Always test small amounts on mainnet.</footer>
-  </div> <!-- end .container -->
+  <!-- CONTACT quick -->
+  <div class="contact-panel" style="margin-top:14px">
+    <div class="label">Contact Us</div>
+    <div class="muted" style="margin-top:8px">
+      Email: <span class="highlight">charitychain.chc@gmail.com</span>
+    </div>
+    <div style="margin-top:8px">
+      <form action="mailto:charitychain.chc@gmail.com" method="post" enctype="text/plain" onsubmit="return contactNote()">
+        <input type="text" name="name" placeholder="Your Name" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff">
+        <input type="email" name="email" placeholder="Your Email Address" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff">
+        <input type="text" name="title" placeholder="Title" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff">
+        <textarea name="message" placeholder="Message" rows="4" required style="width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.02); color:#fff"></textarea>
+        <button type="submit" class="btn" style="width:100%; margin-top:10px">Send</button>
+      </form>
+    </div>
+  </div>
+
+</div> <!-- end .grid -->
+
+<footer>© Charity Chain — Transparency first. Always test small amounts on mainnet.</footer>  </div> <!-- end .container -->
 
 
 <script>
