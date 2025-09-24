@@ -281,20 +281,32 @@
   /* Brand (logo + title side by side) */
   .brand {
     flex-direction: row;
-    justify-content: center;
+    align-items: center;        /* vertical center */
+    justify-content: flex-start;/* left align */
     gap: 12px;
     margin-bottom: 10px;
+    text-align: left;           /* text left */
   }
+
   .logo {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
   }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    /* intro left aligned */
+  }
+
   .title h1 {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
+    line-height: 1.2;
   }
+
   .title p {
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 6px;
     line-height: 1.4;
   }
@@ -322,10 +334,11 @@
 
 .accordion-header {
   width: 100%;
-  background: transparent;
+  background: rgba(124, 58, 237, 0.15); /* wahi subtle purple fade */
   color: #fff;
-  font-size: 18px;
-  font-weight: 600;
+  font-family: 'Cooper', serif;
+  font-weight: 400;
+  font-size: 22px;
   padding: 14px 16px;
   display: flex;
   justify-content: space-between;
@@ -333,6 +346,8 @@
   cursor: pointer;
   border: none;
   outline: none;
+  border-radius: 10px;
+  margin-bottom: 0;
 }
 
 .accordion-header .arrow {
@@ -354,35 +369,7 @@
   display: block;
 }
 
-
-.accordion-header {
-  font-family: 'Cooper', serif;
-  font-weight: 400;
-  font-size: 22px;
-  color: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  width: 100%;
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin-bottom: 0;
-  background: rgba(124, 58, 237, 0.15); /* wahi subtle purple fade */
-}
-
-.accordion-header .arrow {
-  font-size: 20px;
-  transition: transform 0.3s ease;
-}
-
-
-    
-
   </style>
-
 </head>
 
 
@@ -405,7 +392,7 @@
 
 
     <div class="title">
-          <h1>Charity Chain (CHC)</h1>
+          <h1>Charity Chain-CHC</h1>
           <p class="muted">Polygon chain's 1st utility + charity-based DeFi token</p>
           <p style="margin-top:6px; font-style:italic; color:#fff">Hold Charity Chain — Hold Hope; hearts united, hands uplifted</p>
         </div>
