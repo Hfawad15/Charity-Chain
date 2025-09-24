@@ -274,8 +274,8 @@
   header.header {
     margin-top: 28px;    /* strip ke neeche space */
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch; /* full width layout */
+    text-align: left;
   }
 
   /* Brand layout: logo + heading barabar, intro neeche full width */
@@ -285,7 +285,7 @@
     align-items: center;
     column-gap: 12px;
     margin-bottom: 10px;
-    text-align: left;
+    width: 100%;
   }
 
   .logo {
@@ -310,9 +310,9 @@
     display: block; /* (CHC) neeche line me */
   }
 
-  /* intro lines: full width neeche, logo + heading ke across */
+  /* intro lines: full width neeche, across logo + heading */
   .title p {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* span full row */
     font-size: 13px;
     margin-top: 6px;
     line-height: 1.4;
@@ -331,6 +331,7 @@
   }
 }
 
+/* Accordion styles */
 .accordion-item {
   border-radius: 12px;
   background: rgba(0,0,0,0.18);
