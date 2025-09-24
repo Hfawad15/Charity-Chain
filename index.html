@@ -304,11 +304,84 @@
     padding: 12px;
   }
 }
+
+.accordion-item {
+  border-radius: 12px;
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.accordion-header .arrow {
+  transition: transform 0.3s ease;
+  font-size: 20px;
+}
+
+.accordion-item.active .arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  display: none;
+  padding: 0 16px 16px;
+  color: #ddd;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+
+.accordion-header {
+  font-family: 'Cooper', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 0;
+  background: rgba(124, 58, 237, 0.15); /* wahi subtle purple fade */
+}
+
+.accordion-header .arrow {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+
     
 
   </style>
+
 </head>
+
+
 <body>
+
+
   <div class="container">
 
      <header class="header">
@@ -341,124 +414,194 @@
 
     </header>
 
+
     <div class="grid">
+
       <!-- LEFT: content -->
+
+
       <main>
+
+
         <section class="hero">
+
           <div class="headline">Charity Chain — Transparent On-chain Charity + Token Utility</div>
           <div class="lead">Charity Chain (CHC) creates continuous, transparent funding for real-world charitable activities while offering holders token utility. Every mechanism and payout is recorded on-chain and published with supporting proof.</div>
 
           <!-- Rich 12 sections (detailed) -->
-          <div class="card">
-            <div class="section-title">About Charity Chain</div>
-            <p class="muted">Charity Chain was created to bring accountability and automation to charitable giving. Instead of one-off campaigns, CHC channels a small portion of tokenomics and staking yield to a public funding wallet that finances food distribution, community kitchens, medical help and micro-business grants.</p>
-            <p class="muted">Funds are never moved without on-chain transparency. Each major disbursement is accompanied by transaction hashes, receipts and short video documentation allowing donors and the public to independently verify outcomes.</p>
-            <p class="muted">We combine modern DeFi tools with traditional philanthropic principles to deliver a continuous sadaqah model that benefits vulnerable communities globally. Our operations prioritize local partners and measurable impact.</p>
-            <p class="muted">CHC is deployed on Polygon for low-fee transactions and wide accessibility, making it easy for donors worldwide to participate and verify outcomes.</p>
-            <p class="muted">Our contract addresses, team actions and social records are public and auditable—this is charity you can watch work in real time.</p>
-          </div>
 
-          <div class="card">
-            <div class="section-title">Mission</div>
-            <p class="muted">To make charitable giving simple, continuous and verifiable by embedding funding into token economics. Our goal is to eliminate opacity: donations must be visible, traceable and accountable to every donor.</p>
-            <p class="muted">We support urgent needs (medical emergencies, disaster relief) and long-term uplift (micro-business seed funding, education supplies) with emphasis on measurable impact and local oversight.</p>
-            <p class="muted">Local partnerships ensure culturally appropriate delivery and oversight, while blockchain provides immutable audit trails for every payout.</p>
-            <p class="muted">We publish beneficiary stories and receipts to maintain trust and accountability with our community.</p>
-            <p class="muted">Education and empowerment are core: funds often prioritize sustainable income generation rather than short-term handouts.</p>
-          </div>
+ <div class="accordion-item">
+  <button class="accordion-header">
+    About Charity Chain
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Charity Chain was created to bring accountability and automation to charitable giving. Instead of one-off campaigns, CHC channels a small portion of tokenomics and staking yield to a public funding wallet that finances food distribution, community kitchens, medical help and micro-business grants.</p>
+    <p class="muted">Funds are never moved without on-chain transparency. Each major disbursement is accompanied by transaction hashes, receipts and short video documentation allowing donors and the public to independently verify outcomes.</p>
+    <p class="muted">We combine modern DeFi tools with traditional philanthropic principles to deliver a continuous sadaqah model that benefits vulnerable communities globally. Our operations prioritize local partners and measurable impact.</p>
+    <p class="muted">CHC is deployed on Polygon for low-fee transactions and wide accessibility, making it easy for donors worldwide to participate and verify outcomes.</p>
+    <p class="muted">Our contract addresses, team actions and social records are public and auditable—this is charity you can watch work in real time.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Vision</div>
-            <p class="muted">A world where technology enables transparent compassion—where donors can see exactly how funds are used and small, continuous contributions create lasting social change.</p>
-            <p class="muted">We aim to create a global network of CHC holders whose normal token activity automatically contributes to social good.</p>
-            <p class="muted">Scaling regionally, documenting outcomes, and sharing best practices is our route to creating a repeatable model for on-chain philanthropy.</p>
-            <p class="muted">Future governance will invite stakeholder input on spending priorities and audit policies.</p>
-            <p class="muted">We focus on sustainable impact and responsible stewardship of funds.</p>
-          </div>
 
-          <div class="card">
-            <div class="section-title">Impact Areas</div>
-            <p class="muted">Primary focus: food distribution & community kitchens, micro-business seed grants, emergency medical assistance, school materials, and local community uplift projects.</p>
-            <p class="muted">Funds are prioritized by urgency and long-term benefit—emergency medical payouts take precedence; community kitchens run on a recurring basis.</p>
-            <p class="muted">We maintain an open request queue and scoring system so communities can apply for funding transparently.</p>
-            <p class="muted">Pilot projects are documented with receipts, beneficiary statements and short videos when possible.</p>
-            <p class="muted">Local volunteers and NGOs execute distributions to ensure cultural appropriateness and efficiency.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Mission
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">To make charitable giving simple, continuous and verifiable by embedding funding into token economics. Our goal is to eliminate opacity: donations must be visible, traceable and accountable to every donor.</p>
+    <p class="muted">We support urgent needs (medical emergencies, disaster relief) and long-term uplift (micro-business seed funding, education supplies) with emphasis on measurable impact and local oversight.</p>
+    <p class="muted">Local partnerships ensure culturally appropriate delivery and oversight, while blockchain provides immutable audit trails for every payout.</p>
+    <p class="muted">We publish beneficiary stories and receipts to maintain trust and accountability with our community.</p>
+    <p class="muted">Education and empowerment are core: funds often prioritize sustainable income generation rather than short-term handouts.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">How It Works</div>
-            <p class="muted">Transaction fees and staking rewards route a portion of proceeds into a dedicated on-chain Charity Wallet. The presale and token mechanics ensure charity funding is continuous and not dependent on one-off donations.</p>
-            <p class="muted">Presale buyers purchase CHC using USDT (Polygon). The presale contract delivers CHC instantly from its pre-funded balance.</p>
-            <p class="muted">Periodic audits and public reporting ensure funds are tracked from chain to real-world disbursement. We publish tx hashes and receipts.</p>
-            <p class="muted">Community governance will evolve to allow stakeholder input on spending priorities and strategic partners.</p>
-            <p class="muted">This approach blends DeFi mechanics with philanthropic accountability.</p>
-          </div>
 
-          <div class="card">
-            <div class="section-title">Presale Guide (How Buyers Participate)</div>
-            <p class="muted">1) Connect a Polygon-compatible wallet (MetaMask extension or mobile wallet in-app browser).</p>
-            <p class="muted">2) Approve the USDT token to allow the presale contract to pull the specified amount (standard ERC-20 approve).</p>
-            <p class="muted">3) Click Buy CHC on this site—transactions are processed on Polygon and CHC is delivered instantly if the presale contract holds sufficient tokens.</p>
-            <p class="muted">4) We recommend a small test purchase (0.2–1 USDT) before larger transactions to verify flow and wallet settings.</p>
-            <p class="muted">Owner checklist: deploy & verify presale, transfer CHC to presale address and mark presale excluded from token fees if required.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Vision
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">A world where technology enables transparent compassion—where donors can see exactly how funds are used and small, continuous contributions create lasting social change.</p>
+    <p class="muted">We aim to create a global network of CHC holders whose normal token activity automatically contributes to social good.</p>
+    <p class="muted">Scaling regionally, documenting outcomes, and sharing best practices is our route to creating a repeatable model for on-chain philanthropy.</p>
+    <p class="muted">Future governance will invite stakeholder input on spending priorities and audit policies.</p>
+    <p class="muted">We focus on sustainable impact and responsible stewardship of funds.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Tokenomics & Fees</div>
-            <p class="muted">Default fee split example: 1.5% of transfers → Charity Wallet; 1.5% → Dev/Admin (total 3%). These values may be owner-adjustable within the token contract.</p>
-            <p class="muted">Fees create continuous charity flow and sustainable development funds for the project. Distribution, vesting and supply details are in the verified token contract.</p>
-            <p class="muted">We publish presale rate and expected CHC per USDT for buyer transparency.</p>
-            <p class="muted">All movements related to charity are publicly recorded for verification.</p>
-            <p class="muted">Long-term sustainability includes periodic audits and community oversight.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Impact Areas
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Primary focus: food distribution & community kitchens, micro-business seed grants, emergency medical assistance, school materials, and local community uplift projects.</p>
+    <p class="muted">Funds are prioritized by urgency and long-term benefit—emergency medical payouts take precedence; community kitchens run on a recurring basis.</p>
+    <p class="muted">We maintain an open request queue and scoring system so communities can apply for funding transparently.</p>
+    <p class="muted">Pilot projects are documented with receipts, beneficiary statements and short videos when possible.</p>
+    <p class="muted">Local volunteers and NGOs execute distributions to ensure cultural appropriateness and efficiency.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Transparency & Audit Policy</div>
-            <p class="muted">Major payouts always include transaction hashes, receipts and short video proof where feasible. Written audit summaries are published regularly.</p>
-            <p class="muted">We plan semi-annual audit summaries and immediate reporting for emergency disbursements.</p>
-            <p class="muted">Community members may request clarifications; the team will respond with evidence and explanations where possible.</p>
-            <p class="muted">An immutable on-chain record remains available for independent verification at all times.</p>
-            <p class="muted">Transparency is a core value—no hidden flows or opaque spending.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    How It Works
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Transaction fees and staking rewards route a portion of proceeds into a dedicated on-chain Charity Wallet. The presale and token mechanics ensure charity funding is continuous and not dependent on one-off donations.</p>
+    <p class="muted">Presale buyers purchase CHC using USDT (Polygon). The presale contract delivers CHC instantly from its pre-funded balance.</p>
+    <p class="muted">Periodic audits and public reporting ensure funds are tracked from chain to real-world disbursement. We publish tx hashes and receipts.</p>
+    <p class="muted">Community governance will evolve to allow stakeholder input on spending priorities and strategic partners.</p>
+    <p class="muted">This approach blends DeFi mechanics with philanthropic accountability.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Zakat & Spiritual Benefit</div>
-            <p class="muted">Holding CHC can help facilitate continuous sadaqah. If an individual holds roughly 2.5% of their portfolio in CHC, the ongoing charity stream generated by token mechanics may contribute towards yearly zakat obligations.</p>
-            <p class="muted">This is a facilitative idea and not a ruling—consult local scholars for personal guidance.</p>
-            <p class="muted">The project emphasizes ethical giving so holders can verify where their spiritual benefit flows.</p>
-            <p class="muted">We provide documentation so religious scholars and donors can make informed decisions.</p>
-            <p class="muted">Our goal is to blend spiritual purpose with measurable impact.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Presale Guide (How Buyers Participate)
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">1) Connect a Polygon-compatible wallet (MetaMask extension or mobile wallet in-app browser).</p>
+    <p class="muted">2) Approve the USDT token to allow the presale contract to pull the specified amount (standard ERC-20 approve).</p>
+    <p class="muted">3) Click Buy CHC on this site—transactions are processed on Polygon and CHC is delivered instantly if the presale contract holds sufficient tokens.</p>
+    <p class="muted">4) We recommend a small test purchase (0.2–1 USDT) before larger transactions to verify flow and wallet settings.</p>
+    <p class="muted">Owner checklist: deploy & verify presale, transfer CHC to presale address and mark presale excluded from token fees if required.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Roadmap</div>
-            <p class="muted">Phase 1: Presale, pilot community funding and transparency reports.</p>
-            <p class="muted">Phase 2: DEX listing and strategic NGO partnerships.</p>
-            <p class="muted">Phase 3: Audits, grant programs and regional scaling.</p>
-            <p class="muted">Phase 4: Governance evolution and global expansion.</p>
-            <p class="muted">Each milestone includes public reporting and community updates to ensure shared accountability.</p>
-            <p class="muted">Pilot disbursements will be documented with receipts and video evidence where possible.</p>
-            <p class="muted">Governance and community input will expand after initial phases.</p>
-            <p class="muted">Sustainability and compliance are central to long-term plans.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Tokenomics & Fees
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Default fee split example: 1.5% of transfers → Charity Wallet; 1.5% → Dev/Admin (total 3%). These values may be owner-adjustable within the token contract.</p>
+    <p class="muted">Fees create continuous charity flow and sustainable development funds for the project. Distribution, vesting and supply details are in the verified token contract.</p>
+    <p class="muted">We publish presale rate and expected CHC per USDT for buyer transparency.</p>
+    <p class="muted">All movements related to charity are publicly recorded for verification.</p>
+    <p class="muted">Long-term sustainability includes periodic audits and community oversight.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Team & Community</div>
-            <p class="muted">A lean team focused on transparency, compliance and local partnerships runs the project. Volunteers and local partners form the backbone of execution.</p>
-            <p class="muted">Community involvement is encouraged through social channels and public updates.</p>
-            <p class="muted">We plan to introduce stakeholder governance mechanisms over time.</p>
-            <p class="muted">Public team disclosures and contact methods are available in our community channels for accountability.</p>
-            <p class="muted">Community volunteers and NGOs help with distribution and monitoring.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Transparency & Audit Policy
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Major payouts always include transaction hashes, receipts and short video proof where feasible. Written audit summaries are published regularly.</p>
+    <p class="muted">We plan semi-annual audit summaries and immediate reporting for emergency disbursements.</p>
+    <p class="muted">Community members may request clarifications; the team will respond with evidence and explanations where possible.</p>
+    <p class="muted">An immutable on-chain record remains available for independent verification at all times.</p>
+    <p class="muted">Transparency is a core value—no hidden flows or opaque spending.</p>
+  </div>
+</div>
 
-          <div class="card">
-            <div class="section-title">Frequently Asked Questions (FAQ)</div>
-            <p class="muted"><strong>Q:</strong> Do buyers need Polygonscan? <br><strong>A:</strong> No — buyers can use this site. Polygonscan is optional for advanced verification.</p>
-            <p class="muted"><strong>Q:</strong> Minimum purchase? <br><strong>A:</strong> The owner configures this; testing with 0.2–1 USDT is recommended.</p>
-            <p class="muted"><strong>Q:</strong> How do I verify payouts? <br><strong>A:</strong> We publish tx hashes, receipts and short video proof after major disbursements.</p>
-            <p class="muted"><strong>Q:</strong> What wallet should I use? <br><strong>A:</strong> MetaMask (extension or mobile wallet browser) or TrustWallet in-app browser work well on Polygon.</p>
-            <p class="muted"><strong>Q:</strong> Is presale instant? <br><strong>A:</strong> If presale contract is pre-funded with CHC, buyer receives tokens immediately after successful buy transaction.</p>
-          </div>
+<div class="accordion-item">
+  <button class="accordion-header">
+    Zakat & Spiritual Benefit
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Holding CHC can help facilitate continuous sadaqah. If an individual holds roughly 2.5% of their portfolio in CHC, the ongoing charity stream generated by token mechanics may contribute towards yearly zakat obligations.</p>
+    <p class="muted">This is a facilitative idea and not a ruling—consult local scholars for personal guidance.</p>
+    <p class="muted">The project emphasizes ethical giving so holders can verify where their spiritual benefit flows.</p>
+    <p class="muted">We provide documentation so religious scholars and donors can make informed decisions.</p>
+    <p class="muted">Our goal is to blend spiritual purpose with measurable impact.</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <button class="accordion-header">
+    Roadmap
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">Phase 1: Presale, pilot community funding and transparency reports.</p>
+    <p class="muted">Phase 2: DEX listing and strategic NGO partnerships.</p>
+    <p class="muted">Phase 3: Audits, grant programs and regional scaling.</p>
+    <p class="muted">Phase 4: Governance evolution and global expansion.</p>
+    <p class="muted">Each milestone includes public reporting and community updates to ensure shared accountability.</p>
+    <p class="muted">Pilot disbursements will be documented with receipts and video evidence where possible.</p>
+    <p class="muted">Governance and community input will expand after initial phases.</p>
+    <p class="muted">Sustainability and compliance are central to long-term plans.</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <button class="accordion-header">
+    Team & Community
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted">A lean team focused on transparency, compliance and local partnerships runs the project. Volunteers and local partners form the backbone of execution.</p>
+    <p class="muted">Community involvement is encouraged through social channels and public updates.</p>
+    <p class="muted">We plan to introduce stakeholder governance mechanisms over time.</p>
+    <p class="muted">Public team disclosures and contact methods are available in our community channels for accountability.</p>
+    <p class="muted">Community volunteers and NGOs help with distribution and monitoring.</p>
+  </div>
+</div>
+
+<div class="accordion-item">
+  <button class="accordion-header">
+    Frequently Asked Questions (FAQ)
+    <span class="arrow">›</span>
+  </button>
+  <div class="accordion-content">
+    <p class="muted"><strong>Q:</strong> Do buyers need Polygonscan? <br><strong>A:</strong> No — buyers can use this site. Polygonscan is optional for advanced verification.</p>
+    <p class="muted"><strong>Q:</strong> Minimum purchase? <br><strong>A:</strong> The owner configures this; testing with 0.2–1 USDT is recommended.</p>
+    <p class="muted"><strong>Q:</strong> How do I verify payouts? <br><strong>A:</strong> We publish tx hashes, receipts and short video proof after major disbursements.</p>
+    <p class="muted"><strong>Q:</strong> What wallet should I use? <br><strong>A:</strong> MetaMask (extension or mobile wallet browser) or TrustWallet in-app browser work well on Polygon.</p>
+    <p class="muted"><strong>Q:</strong> Is presale instant? <br><strong>A:</strong> If presale contract is pre-funded with CHC, buyer receives tokens immediately after successful buy transaction.</p>
+  </div>
+</div>
 
         </section>
       </main>
@@ -660,5 +803,16 @@ function contactNote(){
 /* Ensure initial UI updates */
 updateChcOutput();
 </script>
+
+<script>
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
+
 </body>
 </html>
