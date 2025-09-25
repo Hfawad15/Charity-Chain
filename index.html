@@ -310,13 +310,6 @@
     display: block; /* (CHC) neeche line me */
   }
 
-  /* Intro lines ko parent grid ke across phaila do */
-  .brand .title p {
-    grid-column: 1 / -1; /* logo + heading ke neeche full width */
-    font-size: 13px;
-    margin-top: 6px;
-    line-height: 1.4;
-  }
 
   /* Connect Wallet panel compact */
   .panel {
@@ -377,6 +370,36 @@
   display: block;
 }
 
+
+    /* Heading: logo ke barabar vertical align */
+.title .heading {
+  display: flex;
+  flex-direction: column;  /* Name upar, Symbol neeche */
+  justify-content: center; /* Logo ke beech align */
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.title .heading .name {
+  font-size: 20px;
+}
+
+.title .heading .symbol {
+  font-size: 20px;
+  margin-top: 2px;
+}
+
+/* Intro lines neeche full width */
+.brand .title p {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+    
   </style>
 
 </head>
@@ -400,17 +423,17 @@
           </div>
         </div>
 
-        <div class="title">
-          <h1>
-            Charity Chain
-            <span>(CHC)</span>
-          </h1>
-          <p class="muted">Polygon chain's 1st utility + charity-based DeFi token</p>
-          <p style="margin-top:6px; font-style:italic; color:#fff">
-            Hold Charity Chain — Hold Hope; hearts united, hands uplifted
-          </p>
-        </div>
-      </div>
+<div class="title">
+  <div class="heading">
+    <div class="name">Charity Chain</div>
+    <div class="symbol">(CHC)</div>
+  </div>
+  <p class="muted">Polygon chain's 1st utility + charity-based DeFi token</p>
+  <p style="margin-top:6px; font-style:italic; color:#fff">
+    Hold Charity Chain — Hold Hope; hearts united, hands uplifted
+  </p>
+</div>
+     </div>
     
       <div class="net-label" aria-hidden="true">
         <!-- Polygon official icon as provided (base64) -->
