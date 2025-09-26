@@ -447,6 +447,20 @@
   }
 }
 
+
+/* Mobile accordion heading fix (double-line issue solved) */
+@media (max-width: 980px) {
+  .accordion-header {
+    justify-content: flex-start !important;  /* text + arrow ek line me start se */
+    align-items: flex-start !important;      /* multi-line text bhi left/top se align */
+    text-align: left !important;
+    gap: 8px;
+  }
+  .accordion-header .arrow {
+    margin-left: auto !important;            /* arrow ko force right push */
+  }
+}
+
   
     
   </style>
