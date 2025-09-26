@@ -217,39 +217,62 @@
 }
 
 
-/* Desktop: net-label ko right top me bhejna */
-@media (min-width: 981px) {
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .net-label {
-    margin-left: auto;   /* right push */
-    font-size: 15px;
-    color: #fff;
-  }
-}
+/* --------------------
+   CONTACT PANEL: Desktop + Mobile rules (final)
+   -------------------- */
 
-/* Desktop: contact-panel ko wallet ke neeche fix karo */
+/* Desktop: keep contact panel under wallet inside aside */
 @media (min-width: 981px) {
   .contact-panel {
-    grid-column: 2;  /* right column */
-    grid-row: 2;     /* wallet ke neeche */
+    display: block;
+    margin-top: 18px;   /* wallet ke neeche gap */
     width: auto;
-    order: unset;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 420px;
+    grid-template-rows: auto auto;
+    gap: 28px;
+    align-items: start;
+  }
+
+  aside {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .contact-mobile {
+    display: none;   /* desktop pe placeholder chhupa rahe */
   }
 }
 
-/* Mobile: neeche full width */
+/* Mobile: contact panel ko footer se pehle shift karne ke liye */
 @media (max-width: 980px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    order: 2;   /* details baad me */
+  }
+
+  aside {
+    order: 1;   /* wallet panel heading ke baad */
+  }
+
   .contact-panel {
-    order: 3 !important;
-    width: 100%;
-    grid-column: 1 / -1;
+    display: block;
+    margin-top: 0;
+  }
+
+  .contact-mobile {
+    display: block;
+    margin: 18px 0;
   }
 }
+
 
 /* ===============================
    Mobile View Fix (max-width: 768px)
@@ -397,10 +420,72 @@
   font-size: 13px;
   margin-top: 6px;
   line-height: 1.4;
-}
 
     
   </style>
+
+
+
+<script>
+/**
+ * Move contact-panel into .contact-mobile for mobile widths (<=980),
+ * and move it back into aside for desktop (>980).
+ *
+ * This physically moves the element (appendChild) — so form state remains.
+ */
+(function() {
+  const MOBILE_MAX = 980;
+  const contactSelector = '.contact-panel';
+  const placeholderSelector = '.contact-mobile';
+  const asideSelector = 'aside';
+
+  function moveContact() {
+    const contact = document.querySelector(contactSelector);
+    const placeholder = document.querySelector(placeholderSelector);
+    const aside = document.querySelector(asideSelector);
+
+    if (!contact || !placeholder || !aside) return;
+
+    const isMobile = window.innerWidth <= MOBILE_MAX;
+
+    if (isMobile) {
+      // Move contact element into placeholder if not already there
+      if (!placeholder.contains(contact)) {
+        placeholder.appendChild(contact);
+      }
+    } else {
+      // Desktop: ensure contact lives inside aside (after .panel)
+      if (!aside.contains(contact)) {
+        // Prefer inserting after the .panel inside aside
+        const panel = aside.querySelector('.panel');
+        if (panel) panel.insertAdjacentElement('afterend', contact);
+        else aside.appendChild(contact);
+      }
+    }
+  }
+
+  // run on load and resize; use small throttle to avoid thrash
+  let resizeTimer;
+  function onResize() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(moveContact, 80);
+  }
+
+  window.addEventListener('load', moveContact);
+  window.addEventListener('resize', onResize);
+
+  // Optional: also watch DOM mutations in case layout changes dynamically
+  // (not strictly necessary; uncomment if you have SPA-like content)
+  /*
+  const obs = new MutationObserver(() => {
+    moveContact();
+  });
+  obs.observe(document.body, { childList: true, subtree: true });
+  */
+})();
+</script>
+
+
 
 </head>
 
@@ -689,6 +774,8 @@
       </div>
     </div> <!-- .panel end -->
 
+
+
     <!-- CONTACT quick (aside ke andar) -->
     <div class="contact-panel" style="margin-top:14px">
       <div class="label">Contact Us</div>
@@ -708,7 +795,14 @@
 
   </aside> <!-- aside close -->
 
+
 </div> <!-- end .grid -->
+
+  <!-- Mobile placeholder: contact panel will be moved here on small screens -->
+  <!-- Keep this just above the footer in the DOM -->
+  <div class="contact-mobile" aria-hidden="false"></div>
+
+
 
 <footer>© Charity Chain — Transparency first. Always test small amounts on mainnet.</footer>
 
