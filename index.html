@@ -358,25 +358,26 @@
 
 .accordion-header {
   width: 100%;
-  background: rgba(124, 58, 237, 0.15); /* wahi subtle purple fade */
-  color: #fff;
-  font-family: 'Cooper', serif;
-  font-weight: 400;
-  font-size: 22px;
-  padding: 14px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
+  padding: 18px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  background: rgba(124, 58, 237, 0.15);
+  color: #fff;
   border: none;
   outline: none;
   border-radius: 10px;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 .accordion-header .arrow {
+  margin-left: auto;
   transition: transform 0.3s ease;
   font-size: 20px;
+  color: var(--accent2);  /* optional */
 }
 
 .accordion-item.active .arrow {
