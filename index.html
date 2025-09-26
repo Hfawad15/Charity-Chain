@@ -394,6 +394,20 @@
   display: block;
 }
 
+/* Accordion full width fix */
+.accordion-item {
+  width: 100%;            /* container jitna wide */
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  width: 100%;             /* poori row occupy kare */
+  box-sizing: border-box;  /* padding width ke andar hi count ho */
+}
+
+    
+
 
     /* Heading: logo ke barabar vertical align */
 .title .heading {
@@ -670,7 +684,7 @@
 
 <div class="accordion-item">
   <button class="accordion-header">
-    Presale Guide (How Buyers Participate)
+    Presale Guide
     <span class="arrow">›</span>
   </button>
   <div class="accordion-content">
