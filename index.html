@@ -301,37 +301,47 @@
     text-align: left;
   }
 
-  /* Brand layout: logo + heading barabar, intro neeche full width */
-  .brand {
-    display: grid;
-    grid-template-columns: auto 1fr; /* logo left, text right */
-    align-items: center;
-    column-gap: 12px;
-    margin-bottom: 10px;
-    width: 100%;
-  }
+/* Brand layout: logo + heading ek row me, intro neeche full width */
+.brand {
+  display: grid;
+  grid-template-columns: auto 1fr; /* row 1: logo + heading */
+  grid-template-rows: auto auto;   /* row 2: intro full width */
+  align-items: center;
+  column-gap: 12px;
+  margin-bottom: 10px;
+  width: 100%;
+}
 
-  .logo {
-    width: 80px;
-    height: 80px;
-  }
+.logo {
+  grid-column: 1;
+  grid-row: 1;
+  width: 80px;
+  height: 80px;
+}
 
-  .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;   /* vertically center with logo */
-    text-align: left;
-  }
+.title {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertically center heading with logo */
+  text-align: left;
+}
 
-  .title h1 {
-    font-size: 20px;
-    margin: 0;
-    line-height: 1.2;
-  }
+.title h1 {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.2;
+}
 
-  .title h1 span {
-    display: block; /* (CHC) neeche line me */
-  }
+/* intro lines neeche full width */
+.brand .title p {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  font-size: 13px;
+  margin-top: 6px;
+  line-height: 1.4;
+}
 
 
   /* Connect Wallet panel compact */
