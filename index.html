@@ -301,48 +301,47 @@
     text-align: left;
   }
 
-/* Brand layout: logo + heading ek row me, intro neeche full width */
-.brand {
-  display: grid;
-  grid-template-columns: auto 1fr; /* row 1: logo + heading */
-  grid-template-rows: auto auto;   /* row 2: intro full width */
-  align-items: center;
-  column-gap: 12px;
-  margin-bottom: 10px;
-  width: 100%;
-}
+  /* Brand layout: logo + heading ek row me, intro neeche full width */
+  .brand {
+    display: grid;
+    grid-template-columns: auto 1fr; /* row 1: logo + heading */
+    grid-template-rows: auto auto;   /* row 2: intro full width */
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
 
-.logo {
-  grid-column: 1;
-  grid-row: 1;
-  width: 80px;
-  height: 80px;
-}
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    width: 80px;
+    height: 80px;
+  }
 
-.title {
-  grid-column: 2;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertically center heading with logo */
-  text-align: left;
-}
+  .title {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertically center heading with logo */
+    text-align: left;
+  }
 
-.title h1 {
-  font-size: 20px;
-  margin: 0;
-  line-height: 1.2;
-}
+  .title h1 {
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.2;
+  }
 
-/* intro lines neeche full width */
-.brand .title p {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  font-size: 13px;
-  margin-top: 6px;
-  line-height: 1.4;
-}
-
+  /* intro lines neeche full width */
+  .brand .title p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 13px;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
 
   /* Connect Wallet panel compact */
   .panel {
@@ -355,96 +354,38 @@
     font-size: 15px;
     padding: 12px;
   }
+
+  /* Accordion full width fix */
+  .accordion-item {
+    width: 100%;            /* container jitna wide */
+  }
+
+  .accordion-header {
+    width: 100%;             /* full row occupy */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 18px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background: rgba(124, 58, 237, 0.15);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 0;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  .accordion-header .arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+    font-size: 20px;
+    color: var(--accent2);
+  }
 }
-
-/* Accordion styles */
-.accordion-item {
-  border-radius: 12px;
-  background: rgba(0,0,0,0.18);
-  border: 1px solid rgba(255,255,255,0.05);
-  margin-bottom: 12px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 20px;
-  font-size: 18px;
-  font-weight: 600;
-  background: rgba(124, 58, 237, 0.15);
-  color: #fff;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  margin-bottom: 0;
-  cursor: pointer;
-}
-
-.accordion-header .arrow {
-  margin-left: auto;
-  transition: transform 0.3s ease;
-  font-size: 20px;
-  color: var(--accent2);  /* optional */
-}
-
-.accordion-item.active .arrow {
-  transform: rotate(90deg);
-}
-
-.accordion-content {
-  display: none;
-  padding: 0 16px 16px;
-  color: #ddd;
-}
-
-.accordion-item.active .accordion-content {
-  display: block;
-}
-
-/* Accordion full width fix */
-.accordion-item {
-  width: 100%;            /* container jitna wide */
-}
-
-.accordion-header {
-  display: flex;
-  align-items: center;
-  width: 100%;             /* poori row occupy kare */
-  box-sizing: border-box;  /* padding width ke andar hi count ho */
-}
-
-    
-
-
-    /* Heading: logo ke barabar vertical align */
-.title .heading {
-  display: flex;
-  flex-direction: column;  /* Name upar, Symbol neeche */
-  justify-content: center; /* Logo ke beech align */
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #fff;
-}
-
-.title .heading .name {
-  font-size: 20px;
-}
-
-.title .heading .symbol {
-  font-size: 20px;
-  margin-top: 2px;
-}
-
-/* Intro lines neeche full width */
-.brand .title p {
-  grid-column: 1 / -1;
-  font-size: 13px;
-  margin-top: 6px;
-  line-height: 1.4;
 
 
 /* Mobile accordion heading fix */
