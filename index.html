@@ -301,48 +301,38 @@
     text-align: left;
   }
 
-/* Brand layout: logo + heading ek row me, intro neeche full width */
 .brand {
-  display: grid;
-  grid-template-columns: auto 1fr; /* row 1: logo + heading */
-  grid-template-rows: auto auto;   /* row 2: intro full width */
-  align-items: center;
-  column-gap: 12px;
-  margin-bottom: 10px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* logo + heading center */
+  text-align: center;    /* heading aur intro center aligned */
+  margin-bottom: 14px;
 }
 
 .logo {
-  grid-column: 1;
-  grid-row: 1;
   width: 80px;
   height: 80px;
+  margin-bottom: 8px;
 }
 
 .title {
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* vertically center heading with logo */
-  text-align: left;
+  align-items: center;
 }
 
 .title h1 {
   font-size: 20px;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-/* intro lines neeche full width */
 .brand .title p {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  font-size: 13px;
   margin-top: 6px;
+  font-size: 13px;
   line-height: 1.4;
+  max-width: 90%; /* thoda readable banane ke liye */
 }
-
 
 
   /* Connect Wallet panel compact */
