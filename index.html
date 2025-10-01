@@ -346,8 +346,8 @@
 }
 
  .title .heading .name {
-    font-size: 30px;   /* mobile ke liye chhota */
-    line-height: 1.2;
+    font-size: 35px;   /* mobile ke liye chhota */
+    line-height: 1.5;
   }
 }
 
@@ -367,12 +367,13 @@
 }
 
 /* Accordion styles */
+
 .accordion-item {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   background: rgba(0,0,0,0.18);
   border: 1px solid rgba(255,255,255,0.05);
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   overflow: hidden;
 }
 
@@ -389,7 +390,7 @@
   border: none;
   outline: none;
   border-radius: 10px;
-  margin-bottom: 0;
+  margin-bottom: 6px;
   cursor: pointer;
 }
 
@@ -406,8 +407,12 @@
 
 .accordion-content {
   display: none;
-  padding: 0 16px 16px;
+  padding: 12px 16px 16px; /* upar bhi thoda padding de diya */
   color: #ddd;
+  margin-top: 4px; /* heading aur content ke beech halka gap */
+  border-top: 1px solid rgba(255, 255, 255, 0.08); /* soft separator line */
+  border-radius: 0 0 10px 10px; /* sirf neeche rounded corners */
+  background: rgba(0, 0, 0, 0.12); /* thoda contrast dene ke liye halki bg */
 }
 
 .accordion-item.active .accordion-content {
@@ -425,6 +430,7 @@
 
 
     /* Heading: logo ke barabar vertical align */
+
 .title .heading {
   display: flex;
   flex-direction: column;  /* Name upar, Symbol neeche */
