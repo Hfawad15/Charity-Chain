@@ -566,6 +566,28 @@
   obs.observe(document.body, { childList: true, subtree: true });
   */
 })();
+ 
+</script>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll(".accordion-header");
+
+  accordions.forEach(header => {
+    header.addEventListener("click", function() {
+      const item = this.parentElement;
+
+      // Agar ek time pe sirf ek kholna hai:
+      // document.querySelectorAll(".accordion-item").forEach(el => {
+      //   if (el !== item) el.classList.remove("active");
+      // });
+
+      // Toggle current
+      item.classList.toggle("active");
+    });
+  });
+});
 </script>
 
 
