@@ -1058,7 +1058,24 @@ updateChcOutput();
   });
 </script>
 
-    
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll(".accordion-header");
+
+  accordions.forEach(header => {
+    header.addEventListener("click", function(e) {
+      e.preventDefault(); // button default behavior block
+      const item = this.closest(".accordion-item");
+
+      if (!item) return;
+
+      // sirf isi accordion ko toggle karo
+      item.classList.toggle("active");
+    });
+  });
+});
+</script>
+
 
 </body>
 </html>
