@@ -602,28 +602,6 @@ function copyToClipboard(btn) {
 
   
 
-  <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const accordions = document.querySelectorAll(".accordion-header");
-
-  accordions.forEach(header => {
-    header.addEventListener("click", function() {
-      const item = this.parentElement;
-
-      // Agar ek time pe sirf ek kholna hai:
-      // document.querySelectorAll(".accordion-item").forEach(el => {
-      //   if (el !== item) el.classList.remove("active");
-      // });
-
-      // Toggle current
-      item.classList.toggle("active");
-    });
-  });
-});
-</script>
-
-
-
 </head>
 
 
@@ -1063,6 +1041,24 @@ updateChcOutput();
   });
 </script>
 
+<script>
+  // Accordion toggle script
+  document.addEventListener("DOMContentLoaded", function() {
+    const accordions = document.querySelectorAll(".accordion-header");
+
+    accordions.forEach(header => {
+      header.addEventListener("click", function(e) {
+        e.preventDefault(); // button ke default behavior ko block karo
+        const item = this.parentElement;
+
+        // Sirf current accordion toggle hoga
+        item.classList.toggle("active");
+      });
+    });
+  });
+</script>
+
+    
 
 </body>
 </html>
