@@ -503,6 +503,22 @@
   }
 }
 
+    .copy-btn {
+  margin-left: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--accent2);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #042;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+.copy-btn:hover {
+  background: #4ed9aa;
+}
+
   
     
   </style>
@@ -569,6 +585,22 @@
  
 </script>
 
+<script>
+function copyToClipboard(btn) {
+  const addrText = btn.parentElement.textContent.replace("Copy","").trim();
+  navigator.clipboard.writeText(addrText).then(() => {
+    btn.textContent = "✓ Copied";
+    btn.style.background = "#22c55e"; // green
+    setTimeout(() => {
+      btn.textContent = "Copy";
+      btn.style.background = "var(--accent2)";
+    }, 2000);
+  });
+}
+</script>
+
+
+  
 
   <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -649,10 +681,15 @@ document.addEventListener("DOMContentLoaded", function() {
           <!-- Rich 12 sections (detailed) -->
 
  <div class="accordion-item">
-  <button class="accordion-header">
-    About Charity Chain
-    <span class="arrow">›</span>
-  </button>
+   
+<button class="accordion-header">
+  ✅ Contract Details 
+  <span style="margin-left:8px; background:#22c55e; color:#042; font-size:11px; padding:2px 6px; border-radius:4px; font-weight:700;">
+    MIT Licensed
+  </span>
+  <span class="arrow">›</span>
+</button>
+
   <div class="accordion-content">
     <p class="muted">Charity Chain was created to bring accountability and automation to charitable giving. Instead of one-off campaigns, CHC channels a small portion of tokenomics and staking yield to a public funding wallet that finances food distribution, community kitchens, medical help and micro-business grants.</p>
     <p class="muted">Funds are never moved without on-chain transparency. Each major disbursement is accompanied by transaction hashes, receipts and short video documentation allowing donors and the public to independently verify outcomes.</p>
@@ -853,20 +890,32 @@ document.addEventListener("DOMContentLoaded", function() {
           <button class="btn secondary" id="buyBtn">Buy CHC</button>
         </div>
 
-        <!-- Addresses -->
-        <div style="margin-top:14px;">
-          <div class="label">Presale Contract</div>
-          <div class="addr" id="presaleAddr">0xd4434bab66b9687AbAb29128467703DB9d627244</div>
+<!-- Addresses -->
+<div style="margin-top:14px;">
+  <div class="label">Presale Contract</div>
+  <div class="addr" id="presaleAddr">
+    0xd4434bab66b9687AbAb29128467703DB9d627244
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+  </div>
 
-          <div class="label" style="margin-top:10px">CHC Token Contract</div>
-          <div class="addr" id="chcAddr">0x42804f300e3B6E7ea23c1B6585F5fc6EB0cf5Ba9</div>
+  <div class="label" style="margin-top:10px">CHC Token Contract</div>
+  <div class="addr" id="chcAddr">
+    0x42804f300e3B6E7ea23c1B6585F5fc6EB0cf5Ba9
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+  </div>
 
-          <div class="label" style="margin-top:10px">Charity Wallet</div>
-          <div class="addr" id="charityAddr">0x5D87C4F37465DBdB79827d2ff59a83B2C8e8cF3e</div>
+  <div class="label" style="margin-top:10px">Charity Wallet</div>
+  <div class="addr" id="charityAddr">
+    0x5D87C4F37465DBdB79827d2ff59a83B2C8e8cF3e
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+  </div>
 
-          <div class="label" style="margin-top:10px">Admin / Dev Wallet</div>
-          <div class="addr" id="adminAddr">0x32dcEa364611ad237AFA5c5169635029cd57Cb2D</div>
-        </div>
+  <div class="label" style="margin-top:10px">Admin / Dev Wallet</div>
+  <div class="addr" id="adminAddr">
+    0x32dcEa364611ad237AFA5c5169635029cd57Cb2D
+    <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+  </div>
+</div>
       </div>
 
       <div class="socials">
